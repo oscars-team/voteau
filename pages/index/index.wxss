@@ -1,21 +1,56 @@
-/**index.wxss**/
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.title{
+  text-align: center;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.4;
 }
-
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.all{
+  padding: 10px;
+  font-size: 16px;
 }
-
-.userinfo-nickname {
-  color: #aaa;
+.party{
+  margin-top: 24px;
+  margin-bottom: 24px;
+  text-align: center;
 }
-
-.usermotto {
-  margin-top: 200px;
+.introduce{
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-family: 等线;
+  font-size: 13px;
+  text-align: center; 
+}
+.picture{
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+.candidate{
+  margin-top: 24px;
+  margin-bottom: 24px;
+  text-align: center;
+  font-size: 20px;
+  color: #ffa900;
+}
+.content{
+  text-indent: 0px;
+  padding: 5px;
+}
+.partyintro{
+  font-size: 18px;
+  font-weight: 400;
+  border: 2px solid rgb(81, 81, 81);
+  padding: 1.6px 16px 6.4px;
+  border-radius: 7px;
+  box-shadow: rgb(253, 197, 1) 3px 3px;
+  color: #ffa900;
+}
+.buttonArea{
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.button{
+  width: 200px;
+  background-color: rgb(31, 200, 253);
+  color: white;
 }

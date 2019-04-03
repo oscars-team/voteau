@@ -1,17 +1,111 @@
-<view>
-  <form>
-     <view wx:for='{{singleques}}' wx:key='{{index}}'>{{item.name}}
-      <radio-group>
-         <label wx:for='{{slngleanswer}}'>
-           <radio value='{{item.name}}'>
-              {{item.name}}
-           </radio>
-         </label>
-     </radio-group>
-     </view>
+<view class='all'>
+  <view class='title'>澳州大选，选出你心中的英雄</view>
+  <text>澳大利亚联邦大选将在今年五月举行，为你心爱的英雄加油打气的时刻到了</text>
+  <view>
 
-     <view>
-        
-     </view>
-  </form>
+    <view>
+      <view class='party'>
+        <text class='partyintro'>澳大利亚工党</text>
+      </view>
+      <view class='picture'>
+        <image src='../image/gongdang.jpg'></image>
+      </view>
+      <view class='content'>
+        澳大利亚工党（Australian Labor Party）是澳大利亚历史最长的政党。成立于1891 年。该党以民主社会主义为准则，以实现工业、生产、分配和交换的民主社会化和平等、民主、自由与社会合作为其目标。主张在党内实现平等、团结和多数裁决的原则。
+      </view>
+
+    </view>
+
+    <view>
+      <view class='party'>
+       <text class='partyintro'>澳大利亚自由党</text>
+      </view>
+      <view class='picture'>
+        <image src='../image/ziyoudang.jpg'></image>
+      </view>
+      <view class='content'>澳大利亚自由党，成立于1944年；其前身是“澳大利亚统一党”。当时，罗伯特·孟席斯及其支持者脱离了“统一党”而成立，名为“自由”。实际上，等同于英国的保守党，属于中间偏右翼的政党。现任自由党联邦领袖是马尔科姆·特恩布尔（Malcolm Turnbull），副领袖是茱莉·毕肖普。在最近的2013年澳大利亚联邦大选中自由党参与的联盟胜出成为执政党，自由党由此结束了从2007年联邦大选中失利后六年的联邦反对党生涯。现任自由党联邦领袖托尼·阿博特成为新一任联邦总理，在澳大利亚的六个州和两个领地中，自由党和国家党联盟在其中的五个州级政府执政：包括新南威尔士州、维多利亚州、昆士兰州、西澳州以及北领地。
+        </view>
+    </view>
+
+    <view>
+      <view class='party'>
+        <text class='partyintro'>澳大利亚国家党</text>
+      </view>
+      <text class='content'>成立于1918年。原名乡村党，1972年该党在昆士兰州改称国家党，1975年在全国范围更名国家乡村党，1982年改用现名。</text>
+    </view>
+
+    <view>
+      <view class='party'>
+         <text class='partyintro'>澳大利亚绿党</text>
+      </view>
+      <view class='picture'>
+        <image src='../image/lvdang.jpg'></image>
+      </view>
+      <view class='content'>成立于1918年。原名乡村党，1972年该党在昆士兰州改称国家党，1975年在全国范围更名国家乡村党，1982年改用现名。</view>
+    </view>
+  </view>
+
+  <view class='candidate'>候选人介绍</view>
+  <view>
+    <view>
+      <view class='picture'>
+        <image src='../image/xuedun.jpg'></image>
+      </view>
+      <view class='introduce'>澳大利亚工党领袖薛顿</view>
+      <view class='content'>
+        作为最有实力的竞争者，薛顿最强
+      </view>
+    </view>
+
+    <view>
+      <view class='picture'>
+        <image src='../image/molisen.jpg'></image>
+      </view>
+      <view class='introduce'>澳大利亚自由党领袖莫里森</view>
+      <view class='content'>
+        作为自由党的领袖和澳州总理的莫里森，我不相信还有谁能干过他
+      </view>
+    </view>
+
+
+
+  </view>
+
+  <view>为心中的英雄投出宝贵的一票</view>
+  <view>
+    <form bindsubmit='formSubmit'>
+       <view>
+        <view>
+        <view>1.各政党您支持的是？(单选)</view>
+        <radio-group>
+        <radio>工党</radio>
+          <radio>自由党</radio>
+        </radio-group>
+        </view>
+
+        <view>
+          <view>2.您支持那个首相？(单选)</view>
+          <radio-group>
+           <radio>莫里森</radio>
+            <radio>薛顿</radio>
+          </radio-group>
+        </view>
+
+         <view>
+          <view>3.五个政党中你喜欢那几个(多选)</view>
+          <checkbox-group>
+           <checkbox>工党</checkbox>
+            <checkbox>自由党</checkbox>
+             <checkbox>国家党</checkbox>
+              <checkbox>绿党</checkbox>
+               <checkbox>绿党</checkbox>
+          </checkbox-group>
+        </view>
+       </view>
+    <view class='buttonArea'>
+       <button form-type='submit' class='button'>提交</button>
+    </view>
+
+    </form>
+  </view>
 </view>

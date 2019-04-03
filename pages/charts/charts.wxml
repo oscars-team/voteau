@@ -1,0 +1,6 @@
+<view class='container'>
+<view class='title'>
+   {{chartTitle}}
+</view>
+   <canvas canvas-id='columnCanvas' disable-scroll='true' class='canvas'></canvas>
+</view>
