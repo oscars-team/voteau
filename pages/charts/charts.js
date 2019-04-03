@@ -3,7 +3,7 @@ var wxCharts = require("../../utils/wxcharts.js");
 var columnChart = null;
 var chartData = {
   main: {
-    title: '总成交量',
+    title: '选票排行',
     data: [5, 10, 9, 100, 12],
     categories: ["薛顿", "莫里森", "工党", "自由党", "国家党", "绿党"]
   }
