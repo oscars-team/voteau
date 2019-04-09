@@ -1,56 +1,207 @@
+page{
+  background-color: #222946;
+}
 .title{
-  text-align: center;
-  font-size: 22px;
-  font-weight: 400;
-  line-height: 1.4;
+   text-align: center;
+   height: 40px;
+   color: #fff;
+   line-height: 40px;
+   font-size: 18px;
+   background-color: rgb(37, 105, 186);
+   font-weight: 600;
 }
-.all{
+.open{
+  font-size: 14px;
+  color: #999;
+}
+.map{
+   width: 10px;
+   height:10px;
+}
+.openread{
+  float: right;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.content{
   padding: 10px;
-  font-size: 16px;
+  line-height: 25px;
+  text-indent: 0px;
+  font-size: 14px;
+  color: #666;
 }
-.party{
-  margin-top: 24px;
-  margin-bottom: 24px;
+.panda{
+  display: block;
+  width: 100%;
+}
+.pandatitle{
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-size: 20px;
   text-align: center;
+  
+  height: 45px;
+  line-height: 45px;
+  color: white;
+  font-weight: 600;
+  background-color: rgb(84, 190, 94);
+}
+.pandaContainer{
+   padding-bottom:10px; 
+   border-radius: 10px;
+   margin-left: 15px;
+   margin-right: 15px;
+   margin-top: 5px;
+   background-color: white;
+}
+.heart{
+  margin-top: 3px;
+  padding-left: 5px;
+  width: 24px;
+  height: 22px;
+}
+.heartContainer{
+   display: flex;
+   margin-top: 10px;
+}
+.heartArea{
+  display: flex;
+  flex-direction: row;
+  margin-left: 15px;
+  background-color: rgb(84, 190, 94);
+  width: 120px;
+  font-weight: 400
+}
+.heartCount{
+  font-weight: 600;
+  font-size: 20px;
+  padding-left: 5px;
+  color: white;
+}
+.support{
+  margin-left: 35%;
+  width: 80px;
+  height: 30px;
+}
+
+.prime{
+  background-color: white;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 5px;
+  border-radius: 10px;
+}
+.primetitle{
+  text-align: center;
+  background-color: rgb(0, 191, 243);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-size: 20px;
+  height: 45px;
+  line-height: 45px;
+  color: white;
+  font-weight: 600;
+}
+.primeSupp{
+   width: 80px;
+   height: 30px;
+   margin-bottom: 10px;
+}
+/* .primeunSupp{
+   margin-bottom: 10px;
+   width: 76px;
+   height: 26px;
+} */
+.people{
+ display: flex;
+}
+.primeone{
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  width: 50%;
+  text-align: center;
+  background-color: rgb(214, 226, 228);
+}
+.primeone:nth-child(2n+1){
+    background-color: rgb(159, 237, 251)
+}
+.nick{
+  padding-top: 20px;
+  padding-bottom: 10px;
+  font-size: 14px;
+  font-family: "黑体";
+  font-weight: bold;
 }
 .introduce{
-  margin-top: 15px;
-  margin-bottom: 5px;
-  font-family: 等线;
-  font-size: 13px;
-  text-align: center; 
+  padding-bottom: 10px;
+  font-size: 12px;
+  color: rgb(123, 147, 154)
 }
-.picture{
-  width: 100%;
-  height: auto;
-  text-align: center;
+
+.ticket{
+  margin-left: 40px;
+  width: 55%;
+  margin-bottom: 10px;
+  background-color: rgb(0, 145, 255);
+  color: white;
 }
-.candidate{
-  margin-top: 24px;
-  margin-bottom: 24px;
+.vs{
+  height: 90px;
+  width: 60px;
+}
+
+
+.hello{
+   text-align: center;
+}
+.vsarea{
+  position: absolute;
+  left: 42%;
+}
+.party{
   text-align: center;
+  background-color: rgb(37, 105, 168);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   font-size: 20px;
-  color: #ffa900;
-}
-.content{
-  text-indent: 0px;
-  padding: 5px;
+  height: 45px;
+  line-height: 45px;
+  color: white;
+  font-weight: 600;
 }
 .partyintro{
-  font-size: 18px;
-  font-weight: 400;
-  border: 2px solid rgb(81, 81, 81);
-  padding: 1.6px 16px 6.4px;
-  border-radius: 7px;
-  box-shadow: rgb(253, 197, 1) 3px 3px;
-  color: #ffa900;
+   padding-top: 20px;
+   padding-bottom: 10px;
+   font-weight: 500;
+   font-size: 14px;
+   color: rgb(0, 145, 255);
+   text-decoration: underline;
 }
-.buttonArea{
-  margin-top: 30px;
-  margin-bottom: 20px;
+.buttonarea{
+   margin-top: 15px;
+   margin-bottom: 15px;
 }
 .button{
-  width: 200px;
-  background-color: rgb(31, 200, 253);
+  background-color: green;
+  width: 160px;
   color: white;
+}
+.btnSupp{
+  line-height: 30px;
+  width: 80px;
+  height: 30px;
+  color: #fff;
+  border-radius: 12px;
+  background-color: rgb(109, 114, 120);
+  margin-bottom: 10px;
+}
+.btnSupp:hover{
+  line-height: 30px;
+  width: 80px;
+  height: 30px;
+  color: #fff;
+  border-radius: 12px;
+  background-color: rgb(19, 30, 133);
+  margin-bottom: 10px;
 }

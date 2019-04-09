@@ -1,5 +1,9 @@
 //app.js
 App({
+  globalData:{
+    appId:'	wx31eab5f9ee3a110d',
+    secret:'b6413e928a56a2930e4dd701f3ecc439'
+  },
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
@@ -10,6 +14,7 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+         
       }
     })
     // 获取用户信息
@@ -33,7 +38,5 @@ App({
       }
     })
   },
-  globalData: {
-    userInfo: null
-  }
+
 })

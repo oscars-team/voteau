@@ -6,8 +6,8 @@
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "澳州大选",
-    "navigationBarTextStyle":"black"
+    "navigationBarBackgroundColor": "#222946",
+    "navigationBarTitleText": "天天热点",
+    "navigationBarTextStyle":"white"
   }
 }
