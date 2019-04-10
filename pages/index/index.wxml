@@ -44,7 +44,7 @@
           <view class='nick' wx:else>{{cell.Title}}</view>
           <view class='introduce' wx:if='{{cell.ReferenceType==1}}'>{{cell.Reference.Title}}</view>
           <view class='introduce' wx:else>{{cell.Reference.Description}}</view>
-          <view class='ticket'>0</view>
+          <view class='ticket'>{{cell.Votes}}</view>
           <button class='btnSupp' data-sid='{{item.Id}}' data-ops='{{cell}}' bindtap='support'>支持</button>
 
           <!-- <image  src='../image/unsupport.png' class='primeSupp' bindtap='support'></image> -->
@@ -57,9 +57,19 @@
       <button class='button' form-type='submit'>确认投票</button>
     </view>
   </form>
-  
 
-  
+  <view class='foot'>
+      <view>
+        <view class='circleone'></view>
+        <text class='rank'>分享排名</text>
+      </view>
+      <view>
+      <view class='circletwo'></view>
+        <text class='rank'>461</text>
+      </view>
+  </view>
+
+
   <!-- <button wx:if='canIUse'
     open-type='getUserInfo'
     bindgetuserinfo='getUserInfo'
@@ -69,4 +79,6 @@
   <view wx:else>
     请升级微信版本
   </view> -->
+  
+
 </view>

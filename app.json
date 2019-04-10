@@ -1,14 +1,15 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/charts/charts",
-    "pages/rich/rich"
+    "pages/rich/rich",
+    "pages/authorize/authorize"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#222946",
     "navigationBarTitleText": "天天热点",
-    "navigationBarTextStyle":"white"
+    "navigationBarTextStyle": "white"
   },
   "networkTimeout": {
     "request": 5000,

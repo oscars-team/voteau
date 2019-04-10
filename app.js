@@ -1,10 +1,13 @@
 //app.js
 App({
   globalData:{
-    appId:'	wx31eab5f9ee3a110d',
-    secret:'b6413e928a56a2930e4dd701f3ecc439'
+    userInfo:{}
   },
   onLaunch: function () {
+
+
+    
+    var that=this;
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -33,6 +36,10 @@ App({
                 this.userInfoReadyCallback(res)
               }
             }
+          })
+        }else{
+          wx.redirectTo({
+            url: '../authorize/authorize',
           })
         }
       }
