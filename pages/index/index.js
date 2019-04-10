@@ -1,5 +1,6 @@
+var app = getApp();
 Page({
-
+   
   /**
    * 页面的初始数据
    */
@@ -19,8 +20,7 @@ Page({
     //   }]
     // }
     postData: {},
-    nickName: '',
-    avatarUrl: ''
+    userInfo:{}
   },
 
   formSubmit(e) {
@@ -100,7 +100,8 @@ Page({
    */
   onLoad: function(options) {
     var that = this;
-    this.data.postData.uid = 'wxuser';
+    this.data.userInfo=app.globalData;
+    this.data.postData.uid = app.globalData.userInfo.openid;
     this.data.postData.subs = [];
     this.loadData();
   },
