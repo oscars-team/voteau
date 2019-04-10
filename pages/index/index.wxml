@@ -52,23 +52,23 @@
       </view>
 
     </view>
-
+    <official-account></official-account>
     <view class='buttonarea'>
       <button class='button' form-type='submit'>确认投票</button>
     </view>
   </form>
 
   <view class='foot'>
-      <view>
-        <view class='circleone'>
-        </view>
-         <text class='rank'>分享排行</text>
+    <view>
+      <view class='circleone'>
       </view>
-      <view>
-         <image src='../image/dxm.jpg' class='dxm'>
-         </image>
-         <text>461</text>
-      </view>
+      <text class='rank'>分享排行</text>
+    </view>
+    <view>
+      <image src='../image/dxm.jpg' class='dxm'>
+      </image>
+      <text>461</text>
+    </view>
   </view>
 
 
@@ -81,6 +81,6 @@
   <view wx:else>
     请升级微信版本
   </view> -->
-  
+
 
 </view>

@@ -1,8 +1,8 @@
 //app.js
 App({
   globalData: {
-    appId: 'wx31eab5f9ee3a110d',
-    secret: 'a4972a1d16350fa1c1896316c55a3f64',
+    appId: 'wxf3f07fcb46903cc3',
+    secret: '2f07454b27b1093afb6f47e7c7ece663',
     openid: '',
     userInfo: {}
   },
