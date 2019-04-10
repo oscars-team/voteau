@@ -3,6 +3,7 @@ App({
   globalData: {
     appId: 'wx31eab5f9ee3a110d',
     secret: 'a4972a1d16350fa1c1896316c55a3f64',
+    openid: '',
     userInfo: {}
   },
   onLaunch: function() {
@@ -27,7 +28,7 @@ App({
               grant_type: 'authorization_code'
             },
             success(res) {
-              that.globalData.userInfo.openid = res.data.openid;
+              that.globalData.openid = res.data.openid;
             }
           })
         } else {
@@ -43,11 +44,7 @@ App({
           wx.getUserInfo({
             success: res => {
               // 可以将 res 发送给后台解码出 unionId
-              this.globalData.userInfo = {
-                ...this.globalData.userInfo,
-                ...res.userInfo
-              };
-              console.log(this.globalData.userInfo);
+              this.globalData.userInfo = res.userInfo;
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
               if (this.userInfoReadyCallback) {

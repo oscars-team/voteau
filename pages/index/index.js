@@ -1,12 +1,12 @@
 var app = getApp();
 Page({
-   
+
   /**
    * 页面的初始数据
    */
   data: {
-    showModel:true,
-    show:false,
+    showModel: true,
+    show: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     pageData: {},
     //  postData {
@@ -20,7 +20,6 @@ Page({
     //   }]
     // }
     postData: {},
-    userInfo:{}
   },
 
   formSubmit(e) {
@@ -59,15 +58,17 @@ Page({
   },
   postData() {
     var that = this;
+    that.data.postData.uid = app.globalData.openid;
     wx.request({
       url: 'https://mini.artibition.cn/vote/topic/2166554f-14f9-43ad-ae2b-cd9f59e065bf',
       method: "POST",
       data: that.data.postData,
       success(res) {
-        console.log("postdata", res);
-        wx.showToast({
-          title: '成功',
-        })
+        if (res.statusCode == 200) {
+          wx.showToast({
+            title: '投票成功',
+          })
+        }
       },
       fail(res) {
         console.log('fail', res);
@@ -100,8 +101,6 @@ Page({
    */
   onLoad: function(options) {
     var that = this;
-    this.data.userInfo=app.globalData;
-    this.data.postData.uid = app.globalData.userInfo.openid;
     this.data.postData.subs = [];
     this.loadData();
   },
@@ -116,7 +115,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-      
+
   },
 
   /**
