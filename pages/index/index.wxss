@@ -215,6 +215,8 @@ page{
   border-radius: 10px;
 }
 .circleone{
+  font-size: 90rpx;
+  color:white;
   text-align: center;
   background-color: rgb(59, 16, 253);
   border-radius: 50%;
@@ -241,4 +243,25 @@ page{
   width: 140rpx;
   height: 140rpx;
   border-radius: 50%;
+}
+.one{
+  margin-top: 50rpx;
+  margin-left: 50rpx;
+  text-align: center;
+  height: 200rpx;
+}
+.two{
+  margin-left: 50rpx;
+  margin-top: 50rpx;
+  text-align: center;
+  height: 200rpx;
+}
+.btnshare{
+  color:white;
+  font-size: 50rpx;  
+  text-align: center;
+  border-radius: 50%;
+  width: 140rpx;
+  height: 140rpx;
+  background-color:rgb(59, 16, 253);
 }
