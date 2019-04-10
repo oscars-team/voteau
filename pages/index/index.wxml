@@ -59,6 +59,7 @@
   </form>
 
   <view class='foot'>
+<<<<<<< HEAD
 
     <view class='one'>
       <button open-type='share' class='btnshare'>+</button>
@@ -74,6 +75,31 @@
       </view>
 
 
+=======
+    <view>
+      <view class='circleone'>
+      </view>
+      <text class='rank'>分享排行</text>
+    </view>
+    <view>
+      <image src='../image/dxm.jpg' class='dxm'>
+      </image>
+      <text>461</text>
+    </view>
+  </view>
+
+
+  <!-- <button wx:if='canIUse'
+    open-type='getUserInfo'
+    bindgetuserinfo='getUserInfo'
+  >
+  授权登陆
+ </button>
+  <view wx:else>
+    请升级微信版本
+  </view> -->
+
+>>>>>>> ss
 
 
     </view>
