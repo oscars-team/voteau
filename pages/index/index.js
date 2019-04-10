@@ -20,6 +20,7 @@ Page({
     //   }]
     // }
     postData: {},
+    liked: false
   },
 
   formSubmit(e) {
@@ -50,9 +51,10 @@ Page({
       method: "GET",
       success(res) {
         that.setData({
-          pageData: res.data
+          pageData: res.data,
+          liked: wx.getStorageSync('like:' + res.data.Id) == '1'
         })
-        console.log(res);
+        console.dir(res.data);
       }
     })
   },
@@ -68,6 +70,7 @@ Page({
           wx.showToast({
             title: '投票成功',
           })
+          that.loadData();
         }
       },
       fail(res) {
@@ -79,17 +82,23 @@ Page({
     })
   },
   like(e) {
+    var that = this;
     wx.request({
       url: 'https://mini.artibition.cn/vote/topic/like',
       method: 'POST',
       data: {
-        tid: e.like
+        tid: e.currentTarget.dataset.like
       },
       success(res) {
-        console.log(res);
-        wx.showToast({
-          title: '支持成功',
-        })
+        if (res.statusCode == 200) {
+          that.setData({
+            pageData: { ...that.data.pageData,
+              Likes: res.data
+            },
+            liked: true
+          })
+          wx.setStorageSync('like:' + e.currentTarget.dataset.like, '1');
+        }
       }
     })
   },
@@ -108,9 +117,7 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
-
-  },
+  onReady: function() {},
 
   /**
    * 生命周期函数--监听页面显示
@@ -150,14 +157,14 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {
-      var shareObj={
-        title: '19年澳州大选,我来助力',
-        imageUrl: '../image/dx.png',
-        success(res){
+    var shareObj = {
+      title: this.data.pageData.Title,
+      imageUrl: this.data.pageData.Media,
+      success(res) {
 
-        }
       }
+    }
 
-      return shareObj;
+    return shareObj;
   }
 })
