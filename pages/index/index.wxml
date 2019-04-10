@@ -59,44 +59,21 @@
   </form>
 
   <view class='foot'>
-<<<<<<< HEAD
- <view class='one'>
+
+    <view class='one'>
       <button open-type='share' class='btnshare'>+</button>
       <text class='rank'>分享排行</text>
-  </view>
-  <view class='two'>
-    <image src='../image/dxm.jpg' class='dxm'>
-    </image>
-    <view class='rank'>461</view>
-=======
-    <view>
-      <view class='circleone'>
-      </view>
-      <text class='rank'>分享排行</text>
     </view>
-    <view>
+    <view class='two'>
       <image src='../image/dxm.jpg' class='dxm'>
       </image>
-      <text>461</text>
+      <view class='rank'>461</view>
+
+      </view>
+
+      </view>
+
+
+
+
     </view>
->>>>>>> ss
-  </view>
-</view>
-
-
-
-<<<<<<< HEAD
-=======
-  <!-- <button wx:if='canIUse'
-    open-type='getUserInfo'
-    bindgetuserinfo='getUserInfo'
-  >
-  授权登陆
- </button>
-  <view wx:else>
-    请升级微信版本
-  </view> -->
-
->>>>>>> ss
-
-</view>
