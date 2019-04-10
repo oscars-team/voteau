@@ -52,12 +52,13 @@ App({
             }
           })
         } else {
-          wx.redirectTo({
-            url: '../authorize/authorize',
-          })
+           
         }
       }
     })
+
+
+    
   },
 
 })

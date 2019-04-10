@@ -66,10 +66,38 @@
       <button open-type='share' class='btnshare'>+</button>
       <text class='rank'>分享排行</text>
     </view>
-    <view class='two'>
+    <!-- <scroll-view
+      scroll-x='true'
+      style='white-space: nowrap; display: flex'
+    >
+  <view class='two' wx:for='{{scroll}}'>
       <image src='../image/dxm.jpg' class='dxm'>
       </image>
       <view class='rank'>461</view>
     </view>
+    </scroll-view> -->
+
   </view>
+
+
+<view class="modal-box" hidden='{{!showTip}}'>
+  <view class="modal-content">
+    <view class="content-title">微信授权</view>
+    <view class='logoArea'>
+        <image src='../image/logo.png' class='logo'></image>
+    </view>
+    <view class="content-text">
+      为了投票结果的严肃性，天天热点传媒需要您的授权
+    </view>
+  </view>
+  <view class="modal-btns">
+    <view class="weui-flex">
+          <view class="weui-flex__item">
+        <button class="dialog-btn confirm" open-type="getUserInfo" bindgetuserinfo="getUserInfo">开始授权</button>
+                <button class="dialog-btn exit" bindtap='exit'>取消</button>
+      </view>
+    </view>
+  </view>
+</view>
+
 </view>

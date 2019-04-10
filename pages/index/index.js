@@ -5,8 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    showModel: true,
-    show: false,
+    showTip: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     pageData: {},
     //  postData {
@@ -20,7 +19,10 @@ Page({
     //   }]
     // }
     postData: {},
-    liked: false
+
+    liked: false,
+    scroll: [1, 2, 3, 4, 5]
+
   },
 
   formSubmit(e) {
@@ -103,8 +105,17 @@ Page({
     })
   },
   getUserInfo(e) {
-    console.log(e.detail.userInfo)
+    var self = this;
+    if (e && e.detail.userInfo) {
+      self.setData({
+        showTip: false
+      })
+    }
+
   },
+
+
+
 
   /**
    * 生命周期函数--监听页面加载
@@ -113,7 +124,70 @@ Page({
     var that = this;
     this.data.postData.subs = [];
     this.loadData();
+
+    var self = this;
+    // if (app.globalData.userInfo) {
+    //   console.log("用户已授权");
+    // } else if (this.data.canIUse) {
+    //   console.log("请求用户授权");
+    // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+    // 所以此处加入 callback 以防止这种情况
+    // 登录
+    wx.login({
+      success: res => {
+        //console.log(res);
+        var code = res.code; //登录凭证
+        if (code) {
+          app.globalData.code = code;
+          // 获取用户信息
+          wx.getSetting({
+            success: res => {
+              if (res.authSetting['scope.userInfo']) {
+                // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+                wx.getUserInfo({
+                  success: res => {
+                    //console.log(res);
+                    app.globalData.userInfo = res.userInfo
+                    if (res.userInfo) {
+                      // 可以将 res 发送给后台解码出 unionId
+                    } else {
+                      self.setData({
+                        showTip: true
+                      });
+                    }
+                  }
+                })
+              } else {
+                self.setData({
+                  showTip: true
+                });
+              }
+            },
+            fail: function() {
+              console.log('获取用户信息失败')
+            }
+          })
+        } else {
+          console.log('获取用户登录态失败！' + res.errMsg)
+        }
+      }
+    })
+    // } else {
+    //   console.log("用户未授权");
+    //   // 在没有 open-type=getUserInfo 版本的兼容处理
+    //   wx.getUserInfo({
+    //     success: res => {
+    //       app.globalData.userInfo = res.userInfo
+    //     }
+    //   })
+    // }
+
   },
+exit(){
+   this.setData({
+     showTip:false
+   })
+},
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
