@@ -52,22 +52,22 @@
       </view>
 
     </view>
-
+    <official-account></official-account>
     <view class='buttonarea'>
       <button class='button' form-type='submit'>确认投票</button>
     </view>
   </form>
 
   <view class='foot'>
-      <view class='one'>
-         <button open-type='share' class='btnshare'>+</button>
-         <text class='rank'>分享排行</text>
-      </view>
-      <view class='two'>
-         <image src='../image/dxm.jpg' class='dxm'>
-         </image>
-         <view class='rank'>461</view>
-      </view>
-  </view>
+    <view class='one'>
+      <button open-type='share' class='btnshare'>+</button>
+      <text class='rank'>分享排行</text>
+    </view>
+    <view class='two'>
+      <image src='../image/dxm.jpg' class='dxm'>
+      </image>
+      <view class='rank'>461</view>
+    </view>
+    </view>
 
 </view>
