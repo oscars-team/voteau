@@ -4,25 +4,45 @@ Page({
    * 页面的初始数据
    */
   data: {
+    showModel:true,
+    show:false,
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
     pageData: {},
-    postData: {
-      uid: String,
-      subs: [{
-        id: String,
-        ops: [{
-          id: String,
-          order: 1
-        }]
-      }]
-    }
+    //  postData {
+    //   uid: '',
+    //   subs: [{
+    //     id: '',
+    //     ops: [{
+    //       id: '',
+    //       order: 1
+    //     }]
+    //   }]
+    // }
+    postData: {},
+    nickName: '',
+    avatarUrl: ''
   },
 
   formSubmit(e) {
-    console.log('OK', e);
+    // this.postData();
   },
   support(e) {
-    var that = this
-    console.log('e', e);
+    var that = this;
+    if (that.data.postData.subs.find(p => p.id == e.currentTarget.dataset.sid)) {
+      let sub = that.data.postData.subs.find(p => p.id == e.currentTarget.dataset.sid)
+      sub.ops = [{
+        id: e.currentTarget.dataset.ops.Id,
+        order: e.currentTarget.dataset.ops.Order
+      }];
+    } else {
+      that.data.postData.subs.push({
+        id: e.currentTarget.dataset.sid,
+        ops: [{
+          id: e.currentTarget.dataset.ops.Id,
+          order: e.currentTarget.dataset.ops.Order,
+        }]
+      })
+    }
   },
   loadData() {
     var that = this
@@ -42,10 +62,19 @@ Page({
     wx.request({
       url: 'https://mini.artibition.cn/vote/topic/2166554f-14f9-43ad-ae2b-cd9f59e065bf',
       method: "POST",
+      data: that.data.postData,
       success(res) {
-        console.log("res", res);
+        console.log("postdata", res);
+        wx.showToast({
+          title: '成功',
+        })
+      },
+      fail(res) {
+        console.log('fail', res);
+      },
+      complete(res) {
+        console.log();
       }
-
     })
   },
   like(e) {
@@ -57,17 +86,38 @@ Page({
       },
       success(res) {
         console.log(res);
+        wx.showToast({
+          title: '支持成功',
+        })
       }
     })
+  },
+  getUserInfo(e) {
+    console.log(e.detail.userInfo)
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    var that = this;
+    this.data.postData.uid = 'wxuser';
+    this.data.postData.subs = [];
     this.loadData();
-    // this.postData();
+    wx.getSetting({
+      success(res) {
+        if (res.authSetting['scope.userInfo']) {
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+          wx.getUserInfo({
+            success(res) {
+              console.log('res', res.userInfo)
+            }
+          })
+        }else{
+           
+        }
+      }
+    })
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

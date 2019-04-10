@@ -9,5 +9,11 @@
     "navigationBarBackgroundColor": "#222946",
     "navigationBarTitleText": "天天热点",
     "navigationBarTextStyle":"white"
+  },
+  "networkTimeout": {
+    "request": 5000,
+    "connectSocket": 20000,
+    "uploadFile": 20000,
+    "downloadFile": 20000
   }
 }

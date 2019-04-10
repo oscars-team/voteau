@@ -4,32 +4,32 @@
     <text class='dxtitle'>{{pageData.Title}}</text>
   </view>
 
- 
-    <view class='pandaContainer'>
-      <view class='pandatitle'>
-        <text>拯救澳州大熊猫</text>
-      </view>
-      <video src='https://media.w3.org/2010/05/sintel/trailer.mp4' class='panda'></video>
-      <view class='opera'>
-        <view class='content'>澳州两大政党之争，难道我们的大熊猫要沦落为政党之争的牺牲品吗？让我们集体团结发声,为Wang Wang和 FuNi的留居权做主!
-          <view class='openread'>
-            <text class='open'>展开阅读</text>
-          </view>
-        </view>
 
-      </view>
-      <view class='heartContainer'>
-        <view class='heartArea'>
-          <view>
-            <image src='../image/heart.png' class='heart'></image>
-          </view>
-          <text class='heartCount'>973</text>
-        </view>
-        <image src='../image/support.png' class='support' data-like='id' bindtap='like'></image>
-      </view>
+  <view class='pandaContainer'>
+    <view class='pandatitle'>
+      <text>拯救澳州大熊猫</text>
     </view>
+    <video src='https://media.w3.org/2010/05/sintel/trailer.mp4' class='panda'></video>
+    <view class='opera'>
+      <view class='content'>澳州两大政党之争，难道我们的大熊猫要沦落为政党之争的牺牲品吗？让我们集体团结发声,为Wang Wang和 FuNi的留居权做主!
+        <view class='openread'>
+          <text class='open'>展开阅读</text>
+        </view>
+      </view>
 
- <form bindsubmit='formSubmit'>
+    </view>
+    <view class='heartContainer'>
+      <view class='heartArea'>
+        <view>
+          <image src='../image/heart.png' class='heart'></image>
+        </view>
+        <text class='heartCount'>973</text>
+      </view>
+      <image src='../image/support.png' class='support' data-like='id' bindtap='like'></image>
+    </view>
+  </view>
+
+  <form bindsubmit='formSubmit'>
     <view class='prime' wx:for='{{pageData.Subjects}}' wx:key='{{index}}'>
       <view class='primetitle'>
         <text>{{item.Title}}</text>
@@ -40,21 +40,33 @@
       </view>
       <view class='people'>
         <view class='primeone' wx:for='{{item.Options}}' wx:for-item='cell' wx:key='{{index}}'>
-          <view class='nick' wx:if='{{cell.ReferenceType==1}}' >{{cell.Reference.Name}}</view>
+          <view class='nick' wx:if='{{cell.ReferenceType==1}}'>{{cell.Reference.Name}}</view>
           <view class='nick' wx:else>{{cell.Title}}</view>
           <view class='introduce' wx:if='{{cell.ReferenceType==1}}'>{{cell.Reference.Title}}</view>
           <view class='introduce' wx:else>{{cell.Reference.Description}}</view>
           <view class='ticket'>0</view>
-          <button class='btnSupp' data-item='{{item}}' data-cell='{{cell}}' bindtap='support'>支持</button>
+          <button class='btnSupp' data-sid='{{item.Id}}' data-ops='{{cell}}' bindtap='support'>支持</button>
 
-    <!-- <image  src='../image/unsupport.png' class='primeSupp' bindtap='support'></image> -->
-        </view> 
+          <!-- <image  src='../image/unsupport.png' class='primeSupp' bindtap='support'></image> -->
+        </view>
       </view>
 
     </view>
 
     <view class='buttonarea'>
-      <button class='button' form-type='submit'>提交</button>
+      <button class='button' form-type='submit'>确认投票</button>
     </view>
   </form>
+  
+
+  
+  <!-- <button wx:if='canIUse'
+    open-type='getUserInfo'
+    bindgetuserinfo='getUserInfo'
+  >
+  授权登陆
+ </button>
+  <view wx:else>
+    请升级微信版本
+  </view> -->
 </view>
