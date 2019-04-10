@@ -96,6 +96,7 @@ Page({
   getUserInfo(e) {
     console.log(e.detail.userInfo)
   },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -145,11 +146,18 @@ Page({
   onReachBottom: function() {
 
   },
-
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {
+      var shareObj={
+        title: '19年澳州大选,我来助力',
+        imageUrl: '../image/dx.png',
+        success(res){
 
+        }
+      }
+
+      return shareObj;
   }
 })
