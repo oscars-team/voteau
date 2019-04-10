@@ -1,13 +1,12 @@
 //app.js
 App({
-  globalData:{
-    userInfo:{}
+  globalData: {
+    appId: 'wx31eab5f9ee3a110d',
+    secret: 'a4972a1d16350fa1c1896316c55a3f64',
+    userInfo: {}
   },
-  onLaunch: function () {
-
-
-    
-    var that=this;
+  onLaunch: function() {
+    var that = this;
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -17,7 +16,23 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
-         
+        if (res.code) {
+          wx.request({
+            method: 'POST',
+            url: 'https://mini.artibition.cn/sns/jscode2session',
+            data: {
+              appid: that.globalData.appId,
+              secret: that.globalData.secret,
+              js_code: res.code,
+              grant_type: 'authorization_code'
+            },
+            success(res) {
+              that.globalData.userInfo.openid = res.data.openid;
+            }
+          })
+        } else {
+          console.log("获取用户登陆状态失败！" + res.errMsg);
+        }
       }
     })
     // 获取用户信息
@@ -28,8 +43,11 @@ App({
           wx.getUserInfo({
             success: res => {
               // 可以将 res 发送给后台解码出 unionId
-              this.globalData.userInfo = res.userInfo
-
+              this.globalData.userInfo = {
+                ...this.globalData.userInfo,
+                ...res.userInfo
+              };
+              console.log(this.globalData.userInfo);
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
               if (this.userInfoReadyCallback) {
@@ -37,7 +55,7 @@ App({
               }
             }
           })
-        }else{
+        } else {
           wx.redirectTo({
             url: '../authorize/authorize',
           })
