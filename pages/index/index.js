@@ -111,7 +111,7 @@ Page({
         showTip: false
       })
     }
-
+ 
   },
 
 
@@ -121,6 +121,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    console.log('op',options);
     var that = this;
     this.data.postData.subs = [];
     this.loadData();
@@ -191,7 +192,9 @@ exit(){
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {},
+  onReady: function() {
+
+  },
 
   /**
    * 生命周期函数--监听页面显示
@@ -233,6 +236,7 @@ exit(){
   onShareAppMessage: function() {
     var shareObj = {
       title: this.data.pageData.Title,
+      path:"/pages/index/index?openid="+app.globalData.openid,
       imageUrl: this.data.pageData.Media,
       success(res) {
 

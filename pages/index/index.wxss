@@ -206,6 +206,7 @@ page{
   margin-bottom: 10px;
 }
 .foot{
+  overflow: hidden;
   display: flex;
   margin-left: 30rpx;
   margin-right: 30rpx;
@@ -251,8 +252,9 @@ page{
   height: 200rpx;
 }
 .two{
-  margin-left: 40rpx;
   margin-top: 50rpx;
+  margin-left: 40rpx;
+  display: inline-block; 
   text-align: center;
   height: 200rpx;
 }
@@ -332,3 +334,9 @@ page{
   border-left: 1px solid #ebebec;
   color: #60d048;
 }
+
+.scroll-header{
+   display: flex;
+   white-space: nowrap;
+}
+

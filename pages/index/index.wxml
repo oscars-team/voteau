@@ -66,17 +66,13 @@
       <button open-type='share' class='btnshare'>+</button>
       <text class='rank'>分享排行</text>
     </view>
-    <!-- <scroll-view
-      scroll-x='true'
-      style='white-space: nowrap; display: flex'
-    >
-  <view class='two' wx:for='{{scroll}}'>
+    <scroll-view scroll-x class='scroll-header'>
+    <view class='two' wx:for='{{scroll}}' wx:key="{{index}}">
       <image src='../image/dxm.jpg' class='dxm'>
       </image>
       <view class='rank'>461</view>
     </view>
-    </scroll-view> -->
-
+    </scroll-view>
   </view>
 
 
